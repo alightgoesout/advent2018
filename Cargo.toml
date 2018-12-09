@@ -1,0 +1,6 @@
+[package]
+name = "advent"
+version = "0.2.0"
+authors = ["Romain Delamare <romain.delamare@legrand.fr>"]
+
+[dependencies]
