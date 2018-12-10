@@ -4,10 +4,7 @@ pub fn frequency(input: &str) -> i32 {
     loop {
         match input_it.next() {
             Some(s) => {
-                let parsed = s.parse::<i32>();
-                if parsed.is_ok() {
-                    frequency += parsed.unwrap();
-                }
+                frequency += s.parse::<i32>().unwrap_or(0);
             }
             None => break,
         }
