@@ -1,10 +1,10 @@
-use std::io::Error;
 use std::io::stdin;
 use std::io::stdout;
+use std::io::Error;
 use std::io::Write;
 
-mod box_ids;
-mod frequency;
+mod day1;
+mod day2;
 
 fn main() -> Result<(), Error> {
     let puzzle = read_console_input()?;
@@ -22,22 +22,8 @@ fn read_console_input() -> Result<String, Error> {
 
 fn execute_puzzle(puzzle: String) {
     match puzzle.as_ref() {
-        "1:1\n" => println!(
-            "1:1 — Frequency: {}",
-            frequency::frequency(frequency::INPUT)
-        ),
-        "1:2\n" => println!(
-            "1:2 — Repeating frequency: {}",
-            frequency::find_repeating_frequency(frequency::INPUT)
-        ),
-        "2:1\n" => println!(
-            "2:1 — Box IDs checksum: {}",
-            box_ids::checksum(box_ids::INPUT)
-        ),
-        "2:2\n" => println!(
-            "2:2 — Box IDs common letters: {}",
-            box_ids::find_similar_ids(box_ids::INPUT)
-        ),
+        "1\n" => day1::execute(),
+        "2\n" => day2::execute(),
         s => println!("Unknown puzzle: '{}'", s),
     }
 }
