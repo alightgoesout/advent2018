@@ -21,16 +21,7 @@ pub fn checksum(box_ids: &str) -> i32 {
 }
 
 fn check_repeating_letters(box_id: &str) -> (bool, bool) {
-    let mut letters_count = HashMap::new();
-    let mut box_id_letters = box_id.chars();
-    loop {
-        match box_id_letters.next() {
-            Some(c) => {
-                letters_count.entry(c).and_modify(|v| *v += 1).or_insert(1);
-            }
-            None => break,
-        }
-    }
+    let letters_count = count_letters(box_id);
     let mut letters_count_it = letters_count.values();
     let (mut doubled, mut tripled) = (false, false);
     loop {
@@ -47,6 +38,20 @@ fn check_repeating_letters(box_id: &str) -> (bool, bool) {
         }
     }
     (doubled, tripled)
+}
+
+fn count_letters(box_id: &str) -> HashMap<char, i32> {
+    let mut letters_count = HashMap::new();
+    let mut box_id_letters = box_id.chars();
+    loop {
+        match box_id_letters.next() {
+            Some(c) => {
+                letters_count.entry(c).and_modify(|v| *v += 1).or_insert(1);
+            }
+            None => break,
+        }
+    }
+    letters_count
 }
 
 #[cfg(test)]
