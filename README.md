@@ -19,3 +19,9 @@ cargo run
 ```
 
 You will be asked for a puzzle to run. You just have to enter the number of a day with an implementation.
+
+```
+Puzzle to run: 1
+1:1 — Frequency: 525
+1:2 — Repeating frequency: 75749
+```
