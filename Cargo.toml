@@ -4,3 +4,5 @@ version = "0.2.0"
 authors = ["Romain Delamare <romain.delamare@legrand.fr>"]
 
 [dependencies]
+lazy_static = "1.2.0"
+regex = "1.1.0"
