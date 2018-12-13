@@ -1,10 +1,10 @@
-use std::fs;
+use input::read_input;
 
 mod find_repeating_frequency;
 mod frequency;
 
 pub fn execute() {
-    let input = fs::read_to_string("src/day1/INPUT").expect("Could not read INPUT file for day1");
+    let input = read_input("day1");
     println!(
         "1:1 — Frequency: {}",
         frequency::frequency(input.as_ref())

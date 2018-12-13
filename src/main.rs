@@ -7,6 +7,7 @@ use std::io::stdout;
 use std::io::Error;
 use std::io::Write;
 
+mod input;
 mod day1;
 mod day2;
 mod day3;
