@@ -55,45 +55,49 @@ fn count_letters(box_id: &str) -> HashMap<char, i32> {
 }
 
 #[cfg(test)]
-mod test {
-    mod check_repeating_letters {
+mod check_repeating_letters {
+    mod should {
         use super::super::check_repeating_letters;
 
         #[test]
-        fn should_return_false_false_when_input_has_no_doubled_or_tripled_letter() {
+        fn return_false_false_when_input_has_no_doubled_or_tripled_letter() {
             assert_eq!(check_repeating_letters("abcdef"), (false, false));
         }
 
         #[test]
-        fn should_return_true_false_when_input_has_a_doubled_letter_and_no_tripled_letter() {
+        fn return_true_false_when_input_has_a_doubled_letter_and_no_tripled_letter() {
             assert_eq!(check_repeating_letters("abbcde"), (true, false));
         }
 
         #[test]
-        fn should_return_false_true_when_input_has_no_doubled_letter_and_a_trippled_letter() {
+        fn return_false_true_when_input_has_no_doubled_letter_and_a_trippled_letter() {
             assert_eq!(check_repeating_letters("abcccd"), (false, true));
         }
 
         #[test]
-        fn should_return_true_true_when_input_has_a_doubled_letter_and_a_trippled_letter() {
+        fn return_true_true_when_input_has_a_doubled_letter_and_a_trippled_letter() {
             assert_eq!(check_repeating_letters("bababc"), (true, true));
         }
     }
-    mod checksum {
+}
+
+#[cfg(test)]
+mod checksum {
+    mod should {
         use super::super::checksum;
 
         #[test]
-        fn should_return_0_when_input_is_empty() {
+        fn return_0_when_input_is_empty() {
             assert_eq!(checksum(""), 0);
         }
 
         #[test]
-        fn should_return_0_when_input_is_abcdef() {
+        fn return_0_when_input_is_abcdef() {
             assert_eq!(checksum("abcdef"), 0);
         }
 
         #[test]
-        fn should_return_12_when_input_contains_four_ids_whit_doubled_letters_and_three_ids_with_tripled_letter(
+        fn return_12_when_input_contains_four_ids_whit_doubled_letters_and_three_ids_with_tripled_letter(
         ) {
             assert_eq!(
                 checksum(

@@ -91,12 +91,12 @@ impl<'a> Iterator for IdSplitIterator<'a> {
 }
 
 #[cfg(test)]
-mod tests {
-    mod id_split {
+mod id_split {
+    mod should {
         use super::super::IdSplitIterator;
 
         #[test]
-        fn should_iterate_over_id_splits() {
+        fn iterate_over_id_splits() {
             let id = String::from("abcde");
             let mut iterator = IdSplitIterator {
                 id: &id,
@@ -111,12 +111,15 @@ mod tests {
             assert_eq!(None, iterator.next());
         }
     }
+}
 
-    mod find_similar_ids {
+#[cfg(test)]
+mod find_similar_ids {
+    mod should {
         use super::super::find_similar_ids;
 
         #[test]
-        fn should_return_common_letters_of_the_two_similar_ids() {
+        fn return_common_letters_of_the_two_similar_ids() {
             assert_eq!(
                 find_similar_ids(
                     "abcde
